@@ -1,0 +1,13 @@
+﻿@model StudentRegistration.Models.Student
+
+@{
+    ViewData["Title"] = "Thanks";
+}
+
+<h2>@Model.FullName() has been successfully registered for @Model.Course on @Model.RegistrationTime</h2>
+
+
+<br />
+<a asp-action="RegistrationForm">Register another student</a><br />
+<a asp-action="Index">Back to home page</a><br />
+<a asp-action="ListOfRegistredStudents">View list of registred students</a>

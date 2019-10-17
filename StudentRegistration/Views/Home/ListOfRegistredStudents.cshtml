@@ -1,0 +1,44 @@
+﻿@model List<StudentRegistration.Models.Student>
+
+@{
+ 
+   ViewData["Title"] = "Student Registration";
+}
+
+<h2>List Of Current Registered Students</h2>
+
+@if (Model.Any())
+{
+    <table>
+        <thead>
+            <tr>
+                <td>StudentNumber</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Course</td>
+                <td>Semester</td>
+                <td>RegistrationTime</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (StudentRegistration.Models.Student s in Model)
+            {
+                <tr>
+                    <td>@s.StudentNumber</td>
+                    <td>@s.FullName()</td>
+                    <td>@s.Email</td>
+                    <td>@s.Course</td>
+                    <td>@s.Semester</td>
+                    <td>@s.RegistrationTime</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No student were registered yet.</p>
+}
+
+<br />
+<a asp-action="Index">Back to home page</a>

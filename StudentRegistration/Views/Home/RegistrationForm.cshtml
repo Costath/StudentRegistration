@@ -1,0 +1,33 @@
+﻿@model StudentRegistration.Models.Student
+
+@{
+    ViewData["Title"] = "Student Registration";
+}
+
+<h3>Please, enter the details below:</h3>
+
+<form asp-action="ReceiveUserInput" method="post">
+    <label asp-for="StudentNumber">Student Number: </label>
+    <input asp-for="StudentNumber" /><br />
+    <label asp-for="FirstName">First Name: </label>
+    <input asp-for="FirstName" /><br />
+    <label asp-for="LastName">Last Name: </label>
+    <input asp-for="LastName" /><br />
+    <label asp-for="Email">E-Mail Address: </label>
+    <input asp-for="Email" /><br />
+    <label asp-for="Course">Course: </label>
+    <select asp-for="Course">
+        <option value="Programming">Programming</option>
+        <option value="Networking">Networking</option>
+        <option value="Gaming">Gaming</option>
+        <option value="Health Informatics">Health Informatics</option>
+    </select><br />
+    <label asp-for="Semester">Semester: </label>
+    <select asp-for="Semester">
+        <option value="Fall 2018">Fall 2018</option>
+        <option value="Winter 2019">Winter 2019</option>
+        <option value="Summer 2019">Summer 2019</option>
+    </select><br />
+    <button>Submit</button>
+    <button asp-action="Index">Cancel</button>
+</form>
